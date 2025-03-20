@@ -15,7 +15,7 @@
         <?php echo CHtml::link('Manage Posts', array('admin'), array('class' => 'bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600')); ?>
     </div>
 
-    <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+    <div class="mt-8 space-y-12">
         <?php $this->widget('zii.widgets.CListView', array(
             'dataProvider' => $dataProvider,
             'itemView' => '_view',
@@ -24,6 +24,8 @@
                 'header' => '',
                 'htmlOptions' => array('class' => 'pagination flex justify-center mt-8'),
             ),
+            'itemsCssClass' => 'space-y-12', // Adds spacing between post containers
+            'itemsCssClass' => 'border border-gray-300 rounded-lg p-4', // Adds border around each post
         )); ?>
     </div>
 

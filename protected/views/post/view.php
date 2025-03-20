@@ -36,6 +36,20 @@
                 <?php echo Yii::app()->user->getFlash('commentSubmitted'); ?>
             </div>
         <?php else: ?>
+            <style>
+                input[type="text"], textarea {
+                    border: 2px solid #D3D3D3;
+                    padding: 0.75rem;
+                    border-radius: 0.5rem;
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    outline: none;
+                    transition: border-color 0.3s;
+                }
+                input[type="text"]:focus, textarea:focus {
+                    border-color: #ff6ef4;
+                }
+            </style>
             <?php $this->renderPartial('/comment/_form', array(
                 'model' => $comment,
             )); ?>
@@ -43,13 +57,13 @@
     </div>
 
     <div class="mt-12 flex space-x-4">
-        <?php echo CHtml::link('Update Post', array('update', 'id' => $model->id), array('class' => 'bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600')); ?>
+        <?php echo CHtml::link('Update Post', array('update', 'id' => $model->id), array('class' => 'bg-blue-500 text-white py-3 px-5 rounded-lg hover:bg-blue-600 shadow-lg transition-transform transform hover:scale-105')); ?>
         <?php echo CHtml::link('Delete Post', '#', array(
             'submit' => array('delete', 'id' => $model->id),
             'confirm' => 'Are you sure you want to delete this item?',
-            'class' => 'bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600'
+            'class' => 'bg-red-500 text-white py-3 px-5 rounded-lg hover:bg-red-600 shadow-lg transition-transform transform hover:scale-105'
         )); ?>
-        <?php echo CHtml::link('Back to List', array('index'), array('class' => 'bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600')); ?>
+        <?php echo CHtml::link('Back to List', array('index'), array('class' => 'bg-gray-500 text-white py-3 px-5 rounded-lg hover:bg-gray-600 shadow-lg transition-transform transform hover:scale-105')); ?>
     </div>
 
 </div>
